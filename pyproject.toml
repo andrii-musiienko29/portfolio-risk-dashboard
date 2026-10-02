@@ -1,0 +1,22 @@
+[project]
+name = "portfolio-risk"
+version = "1.0.0"
+description = "Portfolio optimisation (MVO, Black-Litterman, risk parity, HRP) and risk analytics (VaR, CVaR, stress tests) with a Streamlit dashboard."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+ignore = ["E741"]
+
+[tool.ruff.lint.per-file-ignores]
+"app.py" = ["E501"]  # long Markdown/LaTeX lines in the methodology tab
